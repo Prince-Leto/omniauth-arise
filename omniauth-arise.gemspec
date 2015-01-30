@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Omniauth::Arise::VERSION
   spec.authors       = ["Grégoire Chauvet"]
   spec.email         = ["gchauvet.home@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Strategy for omniauth for arise}
+  spec.description   = %q{Strategy for omniauth for arise}
   spec.homepage      = ""
   spec.license       = "MIT"
 
