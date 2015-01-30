@@ -1,6 +1,6 @@
 # Omniauth::Arise
 
-TODO: Write a gem description
+Omniauth strategy for arise at ENSIIE
 
 ## Installation
 
