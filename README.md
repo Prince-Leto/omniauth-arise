@@ -62,9 +62,12 @@ Now you can use omniauth into a session controller
 
 ## Nota Bene
 
-In production, you need to add arise certificate to trusted authoritizes.\\
-On Debian do :\\
-Add Arise certificate to `/usr/local/share/ca-certificates`\\
+In production, you need to add arise certificate to trusted authoritizes.
+
+On Debian do :
+
+Add Arise certificate to `/usr/local/share/ca-certificates`
+
 Run `update-ca-certificates`
 
 ## Contributing
