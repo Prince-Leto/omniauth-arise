@@ -1,4 +1,5 @@
 require 'digest'
+require 'json'
 require 'omniauth-oauth'
 
 module OmniAuth
@@ -30,12 +31,16 @@ module OmniAuth
 			end
 
 			def raw_info
-				data = '['
+				data = []
 				options.consumer_options.each_with_index do |option, i|
-					data += '{"jsonrpc": "2.0", "method": "' + option + '", "params": [], "id": ' + (i + 1).to_s + '},'
+				data << {
+					jsonrpc: '2.0',
+					method: option,
+					params: [],
+					id: i+1
+				}
 				end
-				data = data[0, data.length - 1] unless data.length == 0
-				data += ']'
+				data = JSON.dump(data)
 				@raw_info = {}
 				MultiJson.decode(access_token.post("https://oauth.iiens.net/api.php?oauth_api_call_hash=" + Digest::SHA256.hexdigest(data), data, { "Content-Type" => "application/json" }).body).each_with_index do |res, i|
 					@raw_info[options.consumer_options[i]] = res["result"]
